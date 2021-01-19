@@ -1,4 +1,4 @@
-# A-multi-instance-multi-label-weakly-supervisedapproach-for-dealing-with-emerging-MeSH-descriptors
+# WE-MINT-MUL
 
 
 The link to the Previous Host dataset can be found here: https://drive.google.com/drive/folders/1mKwoPVOwnZXBgDeuZYwtxZV-SyTCKJgK?usp=sharing
