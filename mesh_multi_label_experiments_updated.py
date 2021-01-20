@@ -117,12 +117,12 @@ def zero_shot_prediction_setn(x_test,label_embeddings,top_labels,threshold,y_tru
 	y_test=mlb.transform(y_true_final)
 	return f1_score (y_test, y_pred,average='macro')
 
-def read_train_set_pickles_from_similarities(top_labels,threshold,transformation_method,data_range, input2, choice = 'nstam'):
+def read_train_set_pickles_from_similarities(top_labels,threshold,transformation_method,data_range, input2, choice = 'other'):
 		final_x_train = list()
 		final_y_train = list()
 		instances_per_batch= list()
-		if choice == 'stam':
-				path = r'C:\Users\stam\Documents\complex_changes\Previous Host Train_Set for top 100 labels'
+		if choice == 'other':
+				path = main_path+'\\'+'Previous Host Train_Set for top 100 labels'
 		else:
 				path = r'D:\Google Drive\AMULET\Previous Host Train_Set for top 100 labels'
 		counter = 0
@@ -239,15 +239,15 @@ def read_weakly_labeled_similarity_transformation_3(similarities,x_train,thresho
 		
 										
 		
-def read_train_set_pickles(top_labels, label_emb, threshold, transformation_method, data_range, choice='nstam'):
+def read_train_set_pickles(top_labels, label_emb, threshold, transformation_method, data_range, choice='other'):
 	
 	instances_per_batch = []
 	final_x_train=list()
 	final_y_train=list()
 	
 	
-	if choice == 'stam':
-			path = r'C:\Users\stam\Documents\complex_changes\Previous Host Train_Set for top 100 labels'
+	if choice == 'other':
+			path = main_path+'\\'+'Previous Host Train_Set for top 100 labels'
 	else:
 			path = r'D:\Google Drive\AMULET\Previous Host Train_Set for top 100 labels'
 
@@ -628,21 +628,21 @@ def evaluate_mode_1(x, y, test_embeddings, classifiers, y_true_array, brand_new_
 #%%
 ############################################## MAIN CODE ##########################################################
 input1 = input("Choose Number of labels for the experiments: Top 10 (Press 10) or Top 100 (Press 100) or 62 labels with Previous Host (Press 62) ")
-user = 'stam'
+user = 'other'
 
 
-if user == 'stam':
-	main_path = r'C:\Users\stam\Documents\complex_changes'
+if user == 'other':
+	main_path = r'D:\Google Drive\AMULET'
 	os.chdir(main_path)
-	label_embeddings= read_pickles(r'C:\Users\stam\Documents\complex_changes\label_embeddings') 
-	thresholds = read_pickles(r'C:\Users\stam\Documents\complex_changes\gmms_threshold_full')
+	label_embeddings= read_pickles(main_path+'\\'+'label_embeddings') 
+	thresholds = read_pickles(main_path+'\\'+'gmms_threshold_full')
 	
 	if(input1 == '10'):
-		top_10_labels = read_labels(r'C:\Users\stam\Documents\complex_changes\top_10_labels.txt')
+		top_10_labels = read_labels(main_path+'\\'+'top_10_labels.txt')
 	elif(input1 == '100'):
-		top_10_labels =  read_labels(r'C:\Users\stam\Documents\complex_changes\top_100_labels.txt')
+		top_10_labels =  read_labels(main_path+'\\'+'top_100_labels.txt')
 	else:
-		top_10_labels = read_labels(r'C:\Users\stam\Documents\complex_changes\62_previous_host_labels.txt')
+		top_10_labels = read_labels(main_path+'\\'+'62_previous_host_labels.txt')
 		
 	brand_new=read_labels(main_path + '\\' + 'completely_new_labels.txt')
 	complex_new=read_labels(main_path + '\\' + 'new_labels_from_complex_changes.txt')
@@ -651,7 +651,7 @@ else:
 	main_path = r'D:\Google Drive\AMULET'
 	os.chdir(main_path)
 	label_embeddings= read_pickles(r'C:\Users\room5\PycharmProjects\use_PH_dataset\label_embeddings')
-	thresholds = read_pickles(r'D:\Google Drive\AMULET\gmms_threshold')
+	thresholds = read_pickles(r'D:\Google Drive\AMULET\gmms_threshold_full')
 	
 	if(input1 == '10'):
 		top_10_labels = read_labels(r'D:\Google Drive\AMULET\top_10_labels.txt')
@@ -665,8 +665,8 @@ else:
 
 with timer():
 		print("Creating the test set for selected labels please wait...")
-		if user == 'stam':
-			test_embeddings,y_true = create_test_set(r'C:\Users\stam\Documents\complex_changes\top100 embeddings\\',top_10_labels,r"C:\Users\stam\Documents\complex_changes\pure_zero_shot_test_set_top100.txt")
+		if user == 'other':
+			test_embeddings,y_true = create_test_set(main_path+'\\'+'top100 embeddings\\',top_10_labels,main_path+'\\'+'pure_zero_shot_test_set_top100.txt')
 		else:
 			test_embeddings,y_true = create_test_set(r'C:\Users\room5\PycharmProjects\use_PH_dataset\top100 embeddings/',top_10_labels,r"C:\Users\room5\PycharmProjects\Self_train_and_biozslmax\pure_zero_shot_test_set_top100.txt")
 
@@ -741,8 +741,8 @@ if choice == '0':
 
 elif choice == '1':
 	
-	if user == 'stam':
-		os.chdir(r'C:\Users\stam\Documents\complex_changes\existing_pickles')
+	if user == 'other':
+		os.chdir(main_path+'\\'+'existing_pickles')
 	else:
 		pass
 	
