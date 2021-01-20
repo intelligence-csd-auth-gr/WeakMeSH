@@ -10,6 +10,8 @@ The link to the **test set** containing all articles found for the top 100 label
 
 The link to the **Complete results** including those shown inside the paper can be found here: https://drive.google.com/drive/folders/1NB6um2SA9Vwb-nbO7ggvMoR04dbC50KI?usp=sharing
 
+The folder **create PH dataset** contains the files and code needed in order to create the Previous Host Dataset from the MeSH 2018 dataset.
+
 The folder **important files** contains all the files needed to run the program. Specifically all the .txt files with the different sets of labels and the .pickle with the thresholds calculated by the GMMs approach.
 
 The folder **other WSL approaches** has the code needed to transform our data to run the approaches we used to compare our method.
