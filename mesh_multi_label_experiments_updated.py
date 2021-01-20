@@ -97,13 +97,13 @@ def zero_shot_prediction_setn(x_test,label_embeddings,top_labels,threshold,y_tru
 	for i in range(0,len(x_test)):
 		labels=list()
 		for label in top_labels:
-				max_dist=0
+				max_sim=0
 				for sentence in x_test[i]:
 					if(len(sentence) != 0):
-						dist1=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
-						if (dist1 >= max_dist):
-							max_dist=dist1
-				if(max_dist >= threshold[label]):
+						sim_label_sentence=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
+						if (sim_label_sentence >= max_sim):
+							max_sim=sim_label_sentence
+				if(max_sim >= threshold[label]):
 					labels.append(label)
 		if(len(labels)!=0):
 			predictions.append(labels)
@@ -333,13 +333,13 @@ def get_weakly_labeled_set_setn(x_train,label_embeddings,top_labels,threshold, b
 	for i in range(0,len(x_train)):
 		labels=list()
 		for label in top_labels:
-				max_dist=0
+				max_sim=0
 				for sentence in x_train[i]:
 					if(len(sentence) != 0):
-						dist1=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
-						if (dist1 >= max_dist):
-							max_dist=dist1
-				if(max_dist >= threshold[label]): 
+						sim_label_sentence=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
+						if (sim_label_sentence >= max_sim):
+							max_sim=sim_label_sentence
+				if(max_sim >= threshold[label]): 
 					labels.append(label)
 					
 					
@@ -366,14 +366,14 @@ def get_weakly_labeled_set_similarity_1st_transformation(x_train,candidate_y,lab
 					similarities_dict[label] = list()
 			if label in candidate_y[i]:
 				small_list=list()
-				max_dist=0
+				max_sim=0
 				for sentence in x_train[i]:
 					if(len(sentence) != 0):
-						dist1=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
-						small_list.append(dist1)
-						if (dist1 >= max_dist):
-							max_dist=dist1
-				if(max_dist >= threshold[label]): 
+						sim_label_sentence=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
+						small_list.append(sim_label_sentence)
+						if (sim_label_sentence >= max_sim):
+							max_sim=sim_label_sentence
+				if(max_sim >= threshold[label]): 
 					labels.append(label)
 				similarities_dict[label].append([small_list,i])
 					
@@ -400,15 +400,15 @@ def get_weakly_labeled_set_similarity_2nd_transformation(x_train,candidate_y,lab
 			if label in candidate_y[i]:
 				#print(i)
 				#print(label)
-				max_dist=0
+				max_sim=0
 				#max_sentence=[]
 				for sentence in x_train[i]:
 					if(len(sentence) != 0):
-						dist1=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
-						if (dist1 >= max_dist and arrayisin(np.array(sentence.cpu()), new_x_train)==False):
-							max_dist=dist1
+						sim_label_sentence=1-cosine(label_embeddings[label],np.array(sentence.cpu()))
+						if (sim_label_sentence >= max_sim and arrayisin(np.array(sentence.cpu()), new_x_train)==False):
+							max_sim=sim_label_sentence
 							max_sentence=np.array(sentence.cpu())
-				if(max_dist >= threshold[label] and arrayisin(max_sentence, new_x_train)==False):
+				if(max_sim >= threshold[label] and arrayisin(max_sentence, new_x_train)==False):
 					#print(i)
 					new_x_train.append(max_sentence)
 					new_y_train.append(label)
@@ -430,15 +430,15 @@ def get_weakly_labeled_set_similarity_3rd_transformation(x_train,candidate_y,lab
 	for i in range(0,len(x_train)):
 		for label in top_labels:
 			if label in candidate_y[i]:
-				max_dist=0
+				max_sim=0
 				for j in range(0,len(x_train[i])):
 					if(len(x_train[i][j]) != 0):
-						dist1=1-cosine(label_embeddings[label],np.array(x_train[i][j].cpu()))
-						if (dist1 >= max_dist and arrayisin(np.array(x_train[i][j].cpu()), found_max)==False):
-							max_dist=dist1
+						sim_label_sentence=1-cosine(label_embeddings[label],np.array(x_train[i][j].cpu()))
+						if (sim_label_sentence >= max_sim and arrayisin(np.array(x_train[i][j].cpu()), found_max)==False):
+							max_sim=sim_label_sentence
 							max_sentence=np.array(x_train[i][j].cpu())
 							max_index=j
-				if(max_dist >= threshold[label] and arrayisin(max_sentence, found_max)==False):
+				if(max_sim >= threshold[label] and arrayisin(max_sentence, found_max)==False):
 
 					temp=x_train[i].copy()
 					del temp[max_index]
@@ -638,11 +638,11 @@ if user == 'other':
 	thresholds = read_pickles(main_path+'\\'+'gmms_threshold_full')
 	
 	if(input1 == '10'):
-		top_10_labels = read_labels(main_path+'\\'+'top_10_labels.txt')
+		top_labels = read_labels(main_path+'\\'+'top_10_labels.txt')
 	elif(input1 == '100'):
-		top_10_labels =  read_labels(main_path+'\\'+'top_100_labels.txt')
+		top_labels =  read_labels(main_path+'\\'+'top_100_labels.txt')
 	else:
-		top_10_labels = read_labels(main_path+'\\'+'62_previous_host_labels.txt')
+		top_labels = read_labels(main_path+'\\'+'62_previous_host_labels.txt')
 		
 	brand_new=read_labels(main_path + '\\' + 'completely_new_labels.txt')
 	complex_new=read_labels(main_path + '\\' + 'new_labels_from_complex_changes.txt')
@@ -654,11 +654,11 @@ else:
 	thresholds = read_pickles(r'D:\Google Drive\AMULET\gmms_threshold_full')
 	
 	if(input1 == '10'):
-		top_10_labels = read_labels(r'D:\Google Drive\AMULET\top_10_labels.txt')
+		top_labels = read_labels(r'D:\Google Drive\AMULET\top_10_labels.txt')
 	elif(input1 == '100'):
-		top_10_labels =  read_labels(r'D:\Google Drive\AMULET\top_100_labels.txt')
+		top_labels =  read_labels(r'D:\Google Drive\AMULET\top_100_labels.txt')
 	else:
-		top_10_labels = read_labels(r'D:\Google Drive\AMULET\62_previous_host_labels.txt')
+		top_labels = read_labels(r'D:\Google Drive\AMULET\62_previous_host_labels.txt')
 	
 	brand_new=read_labels(r'D:\Google Drive\AMULET\completely_new_labels.txt')
 	complex_new=read_labels(r'D:\Google Drive\AMULET\new_labels_from_complex_changes.txt')
@@ -666,9 +666,9 @@ else:
 with timer():
 		print("Creating the test set for selected labels please wait...")
 		if user == 'other':
-			test_embeddings,y_true = create_test_set(main_path+'\\'+'top100 embeddings\\',top_10_labels,main_path+'\\'+'pure_zero_shot_test_set_top100.txt')
+			test_embeddings,y_true = create_test_set(main_path+'\\'+'top100 embeddings\\',top_labels,main_path+'\\'+'pure_zero_shot_test_set_top100.txt')
 		else:
-			test_embeddings,y_true = create_test_set(r'C:\Users\room5\PycharmProjects\use_PH_dataset\top100 embeddings/',top_10_labels,r"C:\Users\room5\PycharmProjects\Self_train_and_biozslmax\pure_zero_shot_test_set_top100.txt")
+			test_embeddings,y_true = create_test_set(r'C:\Users\room5\PycharmProjects\use_PH_dataset\top100 embeddings/',top_labels,r"C:\Users\room5\PycharmProjects\Self_train_and_biozslmax\pure_zero_shot_test_set_top100.txt")
 
 ####### compose test variables
 y_true_array = list()
@@ -705,8 +705,8 @@ if choice == '0':
 		print()
 	elif(input3 == '5'):
 		result_list=list()
-		f1_mac = zero_shot_prediction_setn(test_embeddings, label_embeddings, top_10_labels, thresholds, y_true_array)
-		result_list.append(['ZSL_SETN',str(len(top_10_labels)),input2,str(np.round(f1_mac,3))])
+		f1_mac = zero_shot_prediction_setn(test_embeddings, label_embeddings, top_labels, thresholds, y_true_array)
+		result_list.append(['ZSL_SETN',str(len(top_labels)),input2,str(np.round(f1_mac,3))])
 		df=pd.DataFrame(result_list,columns=['METHOD','TOP_LABELS','Threhsold','F1_MACRO'])
 		df.reset_index().to_csv("Results_setn_method.csv",index=False)
 		sys.exit()
@@ -714,8 +714,8 @@ if choice == '0':
 		
 	with timer():
 		print('Data collection transformation...')
-		#x,y,instances_per_batch = read_train_set_pickles(top_10_labels, label_embeddings,thresholds,int(input3), int(input_w))
-		x,y,instances_per_batch=read_train_set_pickles_from_similarities(top_10_labels,thresholds, int(input3), int(input_w), input2, user)
+		#x,y,instances_per_batch = read_train_set_pickles(top_labels, label_embeddings,thresholds,int(input3), int(input_w))
+		x,y,instances_per_batch=read_train_set_pickles_from_similarities(top_labels,thresholds, int(input3), int(input_w), input2, user)
 			 
 	print('##########')
 	#input4 = input("Write the created train_set into .pickles files?: Yes (Press 1)/No (Press2) ")
