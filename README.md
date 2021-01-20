@@ -1,5 +1,6 @@
 # WE-MINT-MUL
 
+This repository contains the code for our [AIME 2021] (http://aime21.aimedicine.info/index.php) paper with title: A multi-instance multi-label weakly supervised approach for dealing with emerging MeSH descriptors
 
 The link to the Previous Host dataset can be found here: https://drive.google.com/drive/folders/1mKwoPVOwnZXBgDeuZYwtxZV-SyTCKJgK?usp=sharing
 
