@@ -29,7 +29,12 @@ The program was developed in Python 3.7
 The requirements to run this program can be found in **requirements.txt**
 
 Example call:
-'python3.7 mesh_multi_label_experiments.py'
+
+`python3.7 mesh_multi_label_experiments.py`
+
+Results will be stored at **main_path**:
+
+>where main_path is an absolute path provided during configuration
 
 
 
