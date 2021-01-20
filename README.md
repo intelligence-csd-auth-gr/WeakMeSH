@@ -22,11 +22,22 @@ The folder **other WSL approaches** has the code needed to transform our data to
 
 **mesh_multi_label_experiments.py** contains the code for running our approach.
 
+
+## Configure
+
+The requirements to run this program can be found in **requirements.txt**
+
+For **mesh_multi_label_experiments.py** 
+
+>set user = 'other' (line 631)
+
+>set main_path to your desired absolute path (line 635). Said path must contain the files from **important files** folder as well as the **Previous Host Dataset** and **test set**.
+
+ 
+
 ## Run
 
 The program was developed in Python 3.7
-
-The requirements to run this program can be found in **requirements.txt**
 
 Example call:
 
