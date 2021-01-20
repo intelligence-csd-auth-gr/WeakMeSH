@@ -24,9 +24,12 @@ The folder **other WSL approaches** has the code needed to transform our data to
 
 ## Run
 
-The program was developed in Python 3.8
+The program was developed in Python 3.7
 
 The requirements to run this program can be found in **requirements.txt**
+
+Example call:
+'python3.7 mesh_multi_label_experiments.py'
 
 
 
