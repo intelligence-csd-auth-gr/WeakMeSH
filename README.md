@@ -33,6 +33,10 @@ For **mesh_multi_label_experiments.py** :
 
 >set main_path to your desired absolute path (line 635). Said path must contain the files from **important files** folder as well as the **Previous Host Dataset** and **test set**.
 
+For **find_seed_words.py** which can be found inside **create PH dataset folder**:
+
+>set the arguement for method create_seed_word_list in line 67 to the .bin file of your choice depending on which year's descriptors you wish to get the info for
+
 ## Run
 
 The program was developed in Python 3.7
