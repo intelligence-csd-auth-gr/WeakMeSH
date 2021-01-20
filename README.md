@@ -51,15 +51,15 @@ Results will be stored at **main_path**:
 
 After executing the program you will be asked to choose the setting which you want to run
 
-1st for how many labels you wish to execute the procedure
+**1st** for how many labels you wish to execute the procedure
 
-2nd The process to be executed. The choice **0 (Raw data)** should be selected if it's the first time you run the program.
+**2nd** The process to be executed. The choice **0 (Raw data)** should be selected if it's the first time you run the program.
 
-3rd The choice for weakly labeled threshold. Either a number betwee [0,1] or the choice for the automatically calculated thresholds by the GMMs.
+**3rd** The choice for weakly labeled threshold. Either a number betwee [0,1] or the choice for the automatically calculated thresholds by the GMMs.
 
-4th The mode to be executed (**Choice 1** for the method proposed inside the paper)
+**4th** The mode to be executed (**Choice 1** for the method proposed inside the paper)
 
-5th How many of the data from the PH dataset should be used to find the weakly-labeled train-set
+**5th** How many of the data from the PH dataset should be used to find the weakly-labeled train-set
 
 ## Developed by: 
 
