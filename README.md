@@ -1,4 +1,4 @@
-# WE-MINT-MUL
+# WeakMeSH
 
 This repository contains the code for our [AIME 2021] (http://aime21.aimedicine.info/index.php) submission with title: A multi-instance multi-label weakly supervised approach for dealing with emerging MeSH descriptors
 
