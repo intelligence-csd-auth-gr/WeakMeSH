@@ -5,7 +5,7 @@ This repository contains the code for our [AIME 2021] (http://aime21.aimedicine.
 ![complex_changes](https://user-images.githubusercontent.com/23103855/105720908-a49ec380-5f2c-11eb-86a8-eff2014f1941.jpg)
 
 ## Files
-The link containing: the **Previous Host dataset** , the **test set** containing all articles found for all 100 most-frequent labels,the **Complete results** including those shown inside the paper as well as the input files for WMIR can be found here: https://drive.google.com/drive/folders/1tE3glPshLIqb8wbO9r5K5u7ppceb5H1C?usp=sharing
+The link containing: the **Previous Host dataset** , the **test set** containing all the embeddings for the articles found for all 100 most-frequent labels, the **Complete results** including those shown inside the paper as well as the input files for WMIR can be found here: https://drive.google.com/drive/folders/1tE3glPshLIqb8wbO9r5K5u7ppceb5H1C?usp=sharing
 
 The folder **create PH dataset** contains the files and code needed in order to create the Previous Host Dataset from the MeSH 2018 dataset.
 
