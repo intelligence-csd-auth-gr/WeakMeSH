@@ -48,7 +48,7 @@ Results will be stored at **main_path**:
 
 After executing the program you will be asked to choose the setting which you want to run
 
-**1st** for how many labels you wish to execute the procedure
+**1st** for how many labels you wish to execute the procedure: top 10 which is a small example of our method using only the top 10 most frequent labels, top 100 which runs our method for the top 100 most frequent labels (the labels without PI or PMN are ignored and thus have no train examples) and final top 62 which are the experiments shown in our paper.
 
 **2nd** The process to be executed. The choice **0 (Raw data)** should be selected if it's the first time you run the program.
 
