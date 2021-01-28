@@ -2,17 +2,17 @@
 
 Install the wmil-sgd github: git clone https://github.com/idiap/wmil-sgd.git
 
-This github has been written in Python 2.7 - we just modify the print commands adding brackets (wmil_sgd.py)
+This github has been written in Python 2.7 - we just modify the print commands adding brackets (we provide the necessary file for copying it to your folder: wmil_sgd.py)
 
 Run the pipelinee_wmil_binarized.py having made the necessary actions:
 
- - 'top_100_labels.txt' or the .txt with the investigated labels
+ - '62_previous_host_labels.txt' with the investigated labels
  - 'PH_x_train_embeddings_top_100_labels_100k_200k_numpy_vectors.pickle' --> numpy vectors of the biobert embeddings per sentence
- -  The corresponding files for the selected mode (e.g. mode 3)
- 	- 'indices_100k_mode_3.csv' 
- 	- 'y_weakly_top_100_075_3.pickle'
+ - 'PH_x_train_embeddings_top_62_labels_100k_200k_modified_sparse_matrix_mode1_GMMs.pickle'  --> transformed dataset 
+ - 'indices_100k_mode_1_GMMs_full.csv' 
+ - 'y_weakly_top_62_GMMs_full_1.pickle'
+ - 'testset_top_62_labels_numpy_vectors.pickle'
 
- We have to select the parameters of the main function: model = SGDWeights(ada = 0.25, alpha=0.4, momentum=0.25, minib=5)
- The selection was made so as to find some positive answers for the trainign set for at least some labels. Towards this direction, we made a balanced training dataset.
+ We have to select the parameters of the main function. The selection was made so as to find some positive answers for the trainign set for at least some labels. Towards this direction, we made a balanced training dataset.
 
 Two pickles are produced, one for the training stage and one for the testing one, writing also the last one into a .csv file.
