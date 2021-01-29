@@ -50,13 +50,13 @@ Results will be stored at **main_path**:
 
 After executing the program you will be asked to choose the setting which you want to run
 
-**1st** for how many labels you wish to execute the procedure: top 10 which is a small example of our method using only the top 10 most frequent labels, top 100 which runs our method for the top 100 most frequent labels (the labels without PI or PMN are ignored and thus have no train examples) and finally top 62 which are the experiments shown in our paper.
+**1st** for how many labels you wish to execute the procedure: **top 10** which is a small example of our method using only the top 10 most frequent labels, **top 100** which runs our method for the top 100 most frequent labels (the labels without PI or PMN are ignored and thus have no train examples) and finally **top 62** which are the experiments shown in our paper.
 
 **2nd** The process to be executed. The choice **0 (Raw data)** should be selected if it's the first time you run the program.
 
 **3rd** The choice for weakly labeled threshold. Either a number betwee [0,1] or the choice for the automatically calculated thresholds by the GMMs.
 
-**4th** The mode to be executed (**Choice 1** for the method proposed inside the paper)
+**4th** The mode to be executed (**Choice 1** for the method proposed inside the paper, **Choice 2** for Prime, **Choice 3** for Extended Prime, **Choice 4** for our method without PI or PMN information, **Choice 5** for our ZSL Method discussed in another paper)
 
 **5th** How many of the data from the PH dataset should be used to find the weakly-labeled train-set
 
