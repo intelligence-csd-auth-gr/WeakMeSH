@@ -697,7 +697,7 @@ if choice == '0':
 		print("Chosen threshold is: GMMs")
 	
 	print('##########')
-	input3= input("Choose Transformation mode: AVG Sentences (Press 1) or Max Sentence (Press 2) or Extended Max Sentence (Press 3) or choose to run the SETN WSL method baseline (Press 4) or the SETN ZSL method baseline (Press 5) ")
+	input3= input("Choose to run: WeakMeSH (Press 1) or Prime (Press 2) or Extended Prime (Press 3) or  WeakMeSH without PI or PMN information (Press 4) or the ZSLBioSentMax method baseline (Press 5) ")
 	print('##########')
 	if(input3 != '5'):
 		input_w = input("Choose how many old data will be used to look for weak labels 100k (Press 1) 200k (Press 2) 300k (Press 3) 400k (Press 4) 500k (Press 5) 600k (Press 6) 700k (Press 7) 800k (Press 8) 900k (Press 9) ")
