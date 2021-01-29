@@ -627,7 +627,7 @@ def evaluate_mode_1(x, y, test_embeddings, classifiers, y_true_array, brand_new_
 		return 
 #%%
 ############################################## MAIN CODE ##########################################################
-input1 = input("Choose Number of labels for the experiments: Top 10 (Press 10) or Top 100 (Press 100) or 62 labels with Previous Host (Press 62) ")
+input1 = input("Choose Number of labels for the experiments: Top 10 (Press 10) or Top 100 (Press 100) or 62 labels with PIs or PMN (Press 62) ")
 user = 'other'
 
 
