@@ -1,0 +1,68 @@
+  	                     precision recall    f1-score   support
+          Ablation       0.00      0.00      0.00       388
+           Adverse       0.03      0.03      0.03       335
+             Aging       0.00      0.00      0.00       397
+        Antibodies       0.00      0.00      0.00       182
+    Antineoplastic       0.00      0.00      0.00      2037
+            Biopsy       0.00      0.00      0.00       229
+            Cancer       0.00      0.00      0.00      2061
+         Cigarette       0.37      0.50      0.43      1164
+       Circulating       0.00      0.00      0.00       374
+        Composting       0.00      0.00      0.00       764
+     Contraception       0.00      0.00      0.00       148
+          Coverage       0.00      0.00      0.00       649
+           Density       0.00      0.00      0.00       433
+        Engagement       0.02      0.04      0.03       218
+Enterobacteriaceae       0.07      0.33      0.11       360
+             Exome       0.02      0.00      0.01      1823
+          Exposure       0.39      0.20      0.27       592
+     Extracellular       0.00      0.00      0.00       187
+         Fermented       0.04      0.02      0.03       305
+            Fibrin       0.00      0.00      0.00       235
+           Frailty       0.00      0.00      0.00      1252
+              Gait       0.00      0.00      0.00       294
+             Gases       0.00      0.00      0.00       468
+            Genome       0.57      0.02      0.04      2872
+       Gestational       0.01      0.01      0.01       212
+              Host       0.00      0.00      0.00       342
+            Latent       0.00      0.00      0.00       342
+          Learning       0.00      0.00      0.00       967
+       Lymphocytes       0.00      0.00      0.00       123
+         Marijuana       0.00      0.00      0.00       439
+            Mental       0.00      0.00      0.00       833
+              Mice       0.00      0.00      0.00       330
+          MicroRNA       0.00      0.00      0.00       378
+Nephroureterectomy       0.01      0.33      0.01       131
+       Nitrosative       0.09      0.19      0.12       172
+         Nutrients       0.02      0.06      0.03       945
+   Oligodendrocyte       0.00      0.00      0.00       140
+                PC       0.00      0.00      0.00       260
+           Patient       0.00      0.00      0.00       239
+       Performance       0.01      0.02      0.01       603
+              Pipe       0.01      0.01      0.01        91
+     Procalcitonin       0.00      0.00      0.00       227
+        Procedural       0.01      0.26      0.02       232
+      Proteostasis       0.06      0.12      0.08       192
+         Pyrolysis       0.00      0.00      0.00       286
+         Receptors       0.00      0.00      0.00       212
+          Salpingo       0.00      0.01      0.00       145
+              Salt       0.00      0.00      0.00       285
+            Sexual       0.01      0.00      0.01       494
+             Shift       0.38      0.68      0.48       253
+           Smokers       0.23      0.01      0.02       974
+           Smoking       0.00      0.00      0.00       500
+          Solution       0.00      0.00      0.00       207
+       Stewardship       0.01      0.00      0.00       599
+          Strength       0.03      0.01      0.01       124
+            Sugars       0.00      0.00      0.00       431
+          Survival       0.00      0.00      0.00      1455
+       Sustainable       0.00      0.00      0.00       219
+               THP       0.08      0.05      0.06      1119
+         Treatment       0.01      0.02      0.01       281
+         Wildfires       0.26      0.67      0.37       218
+         abscessus       0.00      0.01      0.00       141
+
+
+          accuracy                           0.05     32908
+         macro avg       0.04      0.06      0.04     32908
+      weighted avg       0.09      0.05      0.04     32908
