@@ -1,8 +1,10 @@
 # WeakMeSH
 
-This repository contains the code for our [AIME 2021](http://aime21.aimedicine.info/index.php) submission with title: 
+This repository contains the code for our [AIME 2021](http://aime21.aimedicine.info/index.php) paper with title: 
 
 ### A multi-instance multi-label weakly supervised approach for dealing with emerging MeSH descriptors
+
+It also contains the code for the extension submitted in [Artificial Intelligence in Medicine] journal
 
 ![complex_changes](https://user-images.githubusercontent.com/23103855/105720908-a49ec380-5f2c-11eb-86a8-eff2014f1941.jpg)
 
