@@ -1,0 +1,6 @@
+Classifier,MLB_METHOD,F1_MACRO,F1_MICRO,F1_MACRO_BRAND_NEW,F1_MACRO_COMPLEX_NEW
+BernoulliNB(),1,0.237,0.213,0.236,0.092
+GaussianNB(),1,0.258,0.229,0.257,0.095
+LinearDiscriminantAnalysis(),1,0.555,0.544,0.527,0.158
+"LogisticRegression(C=100, n_jobs=3, random_state=24)",1,0.564,0.562,0.528,0.168
+"SGDClassifier(loss='modified_huber', n_jobs=3, random_state=24)",1,0.508,0.516,0.48,0.146
