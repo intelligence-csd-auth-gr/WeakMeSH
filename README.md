@@ -4,7 +4,7 @@ This repository contains the code for our [AIME 2021](http://aime21.aimedicine.i
 
 ### A multi-instance multi-label weakly supervised approach for dealing with emerging MeSH descriptors
 
-It also contains the code for the extension submitted in [Artificial Intelligence in Medicine] journal
+It also contains the code for the extension Published in [Artificial Intelligence in Medicine] journal titled: WeakMeSH: Leveraging Provenance Information for Weakly Supervised Classification of Biomedical Articles with Emerging MeSH Descriptors
 
 ![complex_changes](https://user-images.githubusercontent.com/23103855/105720908-a49ec380-5f2c-11eb-86a8-eff2014f1941.jpg)
 
